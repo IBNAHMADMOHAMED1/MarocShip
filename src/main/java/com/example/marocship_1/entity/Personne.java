@@ -1,2 +1,4 @@
-package com.example.marocship_1.entity;public class Personne {
+package com.example.marocship_1.entity;
+
+public class Personne {
 }
