@@ -1,2 +1,4 @@
-package com.example.marocship_1.controller;public class AdminController {
+package com.example.marocship_1.controller;
+
+public class AdminController {
 }
