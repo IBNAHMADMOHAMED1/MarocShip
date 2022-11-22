@@ -31,6 +31,8 @@
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-core:3.0.2" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:3.0.2" />
           <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:4.0.1" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.31" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
