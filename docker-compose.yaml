@@ -1,24 +1,31 @@
-  version: '3.5'
-  services:
-    jboss:
-      image: quay.io/wildfly/wildfly
-      ports:
-        - 8084:8080
-      volumes:
-        - ./target/marocShip_1-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war
-    postgres:
-      image: postgres
-      container_name: postgres-container
-      volumes:
-        - C:\Users\youcode\Desktop\datat:/var/lib/postgresql/data
-      environment:
-        - POSTGRES_PASSWORD=postgres
-        - POSTGRES_DB=123456
-      ports:
-        - 5432:5432
-      restart:
-        always
-
-
-
-
+version: "
+    3.1
+  "
+services:
+  web:
+    image: quay.io/wildfly/wildfly
+    ports:
+      - "8088:8080"
+    volumes:
+      - ./target/marocShip_1-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: maroc_ship
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+    volumes:
+      - C:\Users\youcode\Desktop\data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8083:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=123456
+    depends_on:
+      - database
+    restart: always
