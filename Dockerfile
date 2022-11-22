@@ -9,26 +9,10 @@
 ### VOLUME : mount the volume to the container
 ### ENV : set the environment variable : ENV <key> <value>
 
-##   version: '3.5'
-   #  services:
-   #    jboss:
-   #      image: quay.io/wildfly/wildfly
-   #      ports:
-   #        - 8084:8080
-   #      volumes:
-   #        - ./target/marocShip_1-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war
-   #    postgres:
-   #      image: postgres
-   #      container_name: postgres-container
-   #      volumes:
-   #        - C:\Users\youcode\Desktop\datat:/var/lib/postgresql/data
-   #      environment:
-   #        - POSTGRES_PASSWORD=postgres
-   #        - POSTGRES_DB=123456
-   #      ports:
-   #        - 5432:5432
-   #      restart:
-   #        always
+FROM quay.io/wildfly/wildfly:latest
+COPY ./target /opt/jboss/wildfly/standalone/deployments/
+##EXPOSE 8084
+
 
 
 
