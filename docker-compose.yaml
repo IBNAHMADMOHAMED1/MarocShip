@@ -22,7 +22,7 @@ services:
     ports:
       - 8083:80
     environment:
-      - PMA_HOST=db
+      - PMA_HOST=database
       - PMA_PORT=3306
       - PMA_USER=root
       - PMA_PASSWORD=123456
