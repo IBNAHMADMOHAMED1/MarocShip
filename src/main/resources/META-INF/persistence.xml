@@ -5,5 +5,19 @@
              version="3.0">
     <persistence-unit name="default">
 
+        <class>com.example.marocship_1.entity.Admin</class>
+        <class>com.example.marocship_1.entity.Chauffeur</class>
+        <class>com.example.marocship_1.entity.Historique</class>
+        <class>com.example.marocship_1.entity.Livraison</class>
+        <class>com.example.marocship_1.entity.Manager</class>
+        <class>com.example.marocship_1.entity.Person</class>
+        <class>com.example.marocship_1.entity.Responsable</class>
+        <class>com.example.marocship_1.entity.Vehicule</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/maroc_ship"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="123456"/>
+        </properties>
     </persistence-unit>
 </persistence>
