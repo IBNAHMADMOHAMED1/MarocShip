@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<!-- tailwindcss cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+<script src="https://cdn.tailwindcss.com" type="text/javascript" />
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+<h:head>
+    <title>login</title>
+</h:head>
+<h:body>
+    <f:view class="h-screen">
+        <div class="px-6 h-full text-gray-800 ">
+            <div class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
+                <div class="grow-0 shrink-0 w-full xl:w-1/2 lg:w-1/2 md:w-full sm:w-full justify-center items-center flex flex-col">
+                    <iframe style="width: 500px; height: 500px; align-items: center; justify-content: center; display: flex;"
+                            src="https://embed.lottiefiles.com/animation/100365"></iframe>
+                </div>
+                <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+                    <h:form>
+                    <div class="flex flex-row items-center justify-center lg:justify-start">
+                        <p class="text-lg mb-0 mr-4">Maroc Shipping</p>
+                    </div>
+
+
+                <div
+                        class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
+                    <p class="text-center font-semibold mx-4 mb-0">Login</p>
+                </div>
+
+                <!-- Email input -->
+
+
+                    <div class="mb-6">
+                        <h:inputText
+                                styleClass="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                      value="#{spotlightView.email}" />
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="mb-6">
+                        <h:inputSecret
+
+                                styleClass="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                      value="#{spotlightView.password}" />
+                    </div>
+
+                    <div class="text-center lg:text-left">
+                        <h:commandButton
+
+                                styleClass="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                                         actionListener="#{loginBean.login}"
+                        value="Login" />
+                    </div>
+                </h:form>
+                </div>
+            </div>
+        </div>
+    </f:view>
+</h:body>
+
+</html>

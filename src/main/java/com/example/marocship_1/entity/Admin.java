@@ -5,10 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
-public class Admin {
+public class Admin implements Serializable {
     @Id
     @Column(name = "id_Admin", nullable = false)
     private Integer id;
