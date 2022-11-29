@@ -1,4 +1,4 @@
-package com.example.marocship.beans;
+package com.example.marocship_1.beans;
 
 import com.example.marocship.entities.Person;
 import jakarta.enterprise.context.SessionScoped;
