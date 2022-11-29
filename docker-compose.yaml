@@ -1,13 +1,20 @@
-version: "
-    3.1
-  "
+version: "3.1"
 services:
   web:
     image: quay.io/wildfly/wildfly
     ports:
       - "8088:8080"
     volumes:
-      - ./target/marocShip_1-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war
+      - ./target/marocShip-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: maroc_ship
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+       - C:\Users\youcode\Desktop\data:/var/lib/mysql
   database:
     image: mysql:5.7
     environment:

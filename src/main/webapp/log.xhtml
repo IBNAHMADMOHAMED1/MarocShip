@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+    <title>Login</title>
+</h:head>
+<p:card>
+    <h:form>
+
+        <p:selectOneButton value="#{login.role}">
+            <f:selectItem itemLabel="Manager" itemValue="MANAGER"/>
+            <f:selectItem itemLabel="Delivery Manager" itemValue="DELIVERY_MANAGER"/>
+            <f:selectItem itemLabel="Driver" itemValue="DRIVER"/>
+        </p:selectOneButton>
+
+        <h:panelGrid columns="3" cellpadding="7" styleClass="mb-3">
+            <p:outputLabel for="email" value="Email:"/>
+            <p:inputText a:placeholder="Your email address" id="email" value="#{login.email}" required="true" label="Email">
+            </p:inputText>
+            <br/>
+            <p:outputLabel for="password" value="Password:"/>
+            <p:password a:placeholder="Your password" id="password" value="#{login.password}" toggleMask="true" redisplay="true" label="Password" required="true"/>
+
+        </h:panelGrid>
+
+        <p:commandButton value="Login" update="@form" action="#{loginController.login}" icon="pi pi-lock"/>
+        <br />
+        <p:outputLabel value="#{auth.user.username}"/>
+        <br />
+        <p:outputLabel value="#{auth.role}"/>
+        <br />
+        <p:outputLabel value="#{alert.message}" />
+    </h:form>
+</p:card>
+<h:body>
+
+</h:body>
+
+</html>

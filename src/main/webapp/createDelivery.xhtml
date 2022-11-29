@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Home page</title>
+</h:head>
+<h:body>
+    <p:badge value="Loding CSS..."></p:badge>
+    <h2>Create delivery..............</h2>
+    <h3>Vehicle categories</h3>
+    <p:dataTable value="#{deliveryController.vehicleCategories}" var="category">
+        <p:column styleClass="border:solid 1px red; padding:12px;" headerText="Category ID">
+            <h:outputText value="#{category.id}" />
+        </p:column>
+        <p:column headerText="Category name">
+            <h:outputText value="#{category.type}" />
+        </p:column>
+    </p:dataTable>
+    <hr/>
+    <h3>Please fillout the form</h3>
+    <h:form>
+
+        <h:outputLabel>Origin (Ex: safi)</h:outputLabel>
+        <h:inputText value="#{delivery.origin}" /> <br/>
+        <h:outputLabel >Destination</h:outputLabel>
+        <h:inputText value="#{delivery.destination}" /> <br/>
+        <h:outputLabel >Vehicle category id</h:outputLabel>
+        <h:inputText value="#{delivery.vehicleCatId}" /> <h:outputText value=" From the list above ;)" /> <br/>
+        <h:outputLabel >Weight</h:outputLabel>
+        <h:inputText value="#{delivery.weight}" /> <br/>
+
+
+        <h:commandButton value="Create" actionListener="#{deliveryController.createDelivery}" />
+    </h:form>
+
+    <hr/>
+    <h3>Deliveries</h3>
+    <p:dataTable value="#{deliveryController.deliveries}" var="dlvry">
+        <p:column styleClass="border:solid 1px red; padding:12px;" headerText="ID">
+            <h:outputText value="#{dlvry.id}" />
+        </p:column>
+        <p:column headerText="Status">
+            <h:outputText value="#{dlvry.status}" />
+        </p:column>
+    </p:dataTable>
+    <hr/>
+</h:body>
+
+</html>

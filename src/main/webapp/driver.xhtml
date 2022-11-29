@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+
+    </h:head>
+   <h:body>
+      <h3>All deliveries</h3>
+      <p:dataTable value="#{deliveryController.deliveriesByVehicle}" var="deliverDr">
+          <p:column headerText="Delivery ID">
+              <h:outputText value="#{deliverDr.getId()}" />
+          </p:column>
+          <p:column headerText="Origin">
+              <h:outputText value="#{deliverDr.getOrigin()}" />
+          </p:column>
+          <p:column headerText="Detination">
+              <h:outputText value="#{deliverDr.getDestination()}" />
+          </p:column>
+          <p:column headerText="status">
+              <h:outputText value="#{deliverDr.getStatus()}" />
+          </p:column>
+          <p:column headerText="action">
+              <h:form>
+                  <h:commandButton actionListener="#{driversController.confirmDeliveryByDriver(deliverDr.getId())}">
+                      <p:button icon="pi pi-times" styleClass="rounded-button ui-button-danger" />
+                  </h:commandButton>
+              </h:form>
+
+              <p:button icon="pi pi-check" styleClass="rounded-button" />
+          </p:column>
+      </p:dataTable>
+   </h:body>
+</f:view>
+</html>

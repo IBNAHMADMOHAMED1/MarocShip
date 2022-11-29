@@ -8,6 +8,9 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/
+.idea
+design-and-conception/*.svg
 *.iws
 *.iml
 *.ipr
@@ -36,3 +39,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+## config
+.env
+./src/main/java/com.marocair.marocair/util/DB/Config.java
