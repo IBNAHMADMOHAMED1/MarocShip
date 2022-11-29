@@ -58,6 +58,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.31</version>
         </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>12.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
 
     </dependencies>
 
